@@ -1,0 +1,16 @@
+version: "3.8"
+
+secrets:
+  REACT_APP_MESSAGE:
+    file: ./secrets/REACT_APP_MESSAGE
+
+services:
+  react-app:
+    build: .
+    ports:
+      - "3002:3002"
+    environment:
+      - PORT=3002
+      - GPG_PASSPHRASE=padmini13
+    secrets:
+      - REACT_APP_MESSAGE
